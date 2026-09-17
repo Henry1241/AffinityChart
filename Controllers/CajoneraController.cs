@@ -1,3 +1,4 @@
+using AffinityChart.Data;
 using AffinityChart.Models;
 using AffinityChart.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -5,17 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace AffinityChart.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class CajoneraController : ControllerBase
 {
-    public CajoneraController()
+    private readonly CajoneraContext _context;
+    public CajoneraController(CajoneraContext context)
     {
-        
+        _context = context;
     }
     // GET all action
     [HttpGet]
     public ActionResult<List<Cajonera>> GetAll() =>
-        CajoService.GetAll();
+        _context.cajonera.ToList();
 
     //Get by ID action
 
@@ -35,14 +37,14 @@ public class CajoneraController : ControllerBase
     public IActionResult Create(Cajonera cajonero)
     {
         CajoService.Add(cajonero);
-        return CreatedAtAction(nameof(Get), new { id = cajonero.Cajon_id}, cajonero);
+        return CreatedAtAction(nameof(Get), new { id = cajonero.cajon_id}, cajonero);
     }
 
     // Put action
     [HttpPut("{id}")]
     public IActionResult Update(int id, Cajonera cajonero)
     {
-        if (id != cajonero.Cajon_id)
+        if (id != cajonero.cajon_id)
             return BadRequest();
         
         var existingCajonero = CajoService.Get(id);

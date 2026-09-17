@@ -1,13 +1,17 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using AffinityChart.Enums;
 
 namespace AffinityChart.Models;
 
+[Table("affinityChart", Schema = "CajoneraDB")]
 public class Affinity
 {
-    public int Affinity_id { get; set; }
-    public string? Description { get; set;}
-    public EnumStatus Status { get; set; }
+    [Key]
+    public int affinity_id { get; set; }
+    public string? description { get; set;}
+    public EnumStatus status { get; set; }
     
     // Foreign Key
-    public required ICollection<Cajonera> Cajoneros { get; set; }
+    public string? towards_to { get; set; } = null;
 }

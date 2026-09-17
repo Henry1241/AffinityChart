@@ -1,17 +1,20 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AffinityChart.Models;
 
+[Table("cajonera", Schema = "CajoneraDB")]
 public class Cajonera
 {
-    public int Cajon_id { get; set; }
-    public string? Name { get; set; }
-    public string? FavoriteFood { get; set; }
-    public string? FavoriteSaga { get; set; }
-    public bool HasBeatenMorgott { get; set; }
-    public bool HasBeatenMalenia { get; set; }
-    public string? Crimes { get; set; }
+    [Key]
+    public int cajon_id { get; set; }
+    public string? name { get; set; }
+    public string? favorite_food { get; set; }
+    public string? favorite_saga { get; set; }
+    public bool has_beaten_morgott { get; set; }
+    public bool has_beaten_malenia { get; set; }
+    public string[] crimes { get; set; } = Array.Empty<string>();
 
-    public int Affinity_id { get; set;}
-    public Affinity Affinity { get; set;}
+    // public int Affinity_id { get; set;}
+    // public required Affinity Affinity { get; set;}
 }

@@ -1,9 +1,9 @@
 @AffinityChart_HostAddress = http://localhost:5055
 
-GET {{AffinityChart_HostAddress}}/cajonera/
-Accept: application/json
+# GET {{AffinityChart_HostAddress}}api/cajonera/
+# Accept: application/json
 
-GET {{AffinityChart_HostAddress}}/affinity/
+GET {{AffinityChart_HostAddress}}api/affinity/
 Accept: application/json
 
 ###

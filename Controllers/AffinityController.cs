@@ -1,3 +1,4 @@
+using AffinityChart.Data;
 using AffinityChart.Models;
 using AffinityChart.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -5,14 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace AffinityChart.Controllers;
 
 [ApiController]
-[Route("[controller]")]
-
+[Route("api/[controller]")]
 public class AffinityController : ControllerBase
 {
+    private readonly AffinityContext _context;
+    public AffinityController(AffinityContext context)
+    {
+        _context = context;
+    }
     // GET all action
     [HttpGet]
     public ActionResult<List<Affinity>> GetAll() =>
-        AffinityService.GetAll();
+        _context.affinityChart.ToList();
 
     //Get by ID action
 
@@ -32,14 +37,14 @@ public class AffinityController : ControllerBase
     public IActionResult Create(Affinity affinity)
     {
         AffinityService.Add(affinity);
-        return CreatedAtAction(nameof(Get), new { id = affinity.Affinity_id}, affinity);
+        return CreatedAtAction(nameof(Get), new { id = affinity.affinity_id}, affinity);
     }
 
     // Put action
     [HttpPut("{id}")]
     public IActionResult Update(int id, Affinity affinity)
     {
-        if (id != affinity.Affinity_id)
+        if (id != affinity.affinity_id)
             return BadRequest();
         
         var existingaffinity = AffinityService.Get(id);

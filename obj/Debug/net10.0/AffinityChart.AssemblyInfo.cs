@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AffinityChart")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acbd2210cc789611e9f45404aec45cfb20cf5dde")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14dd09bae11e3b91090227b72cbbae0d4e0bd97f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AffinityChart")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AffinityChart")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
