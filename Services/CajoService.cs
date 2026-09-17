@@ -1,6 +1,6 @@
 using AffinityChart.Models;
 
-namespace AffinityChart.Serice;
+namespace AffinityChart.Services;
 
 public static class CajoService
 {
@@ -10,7 +10,7 @@ public static class CajoService
     {
         Cajoneros = new List<Cajonera>
         {
-            new Cajonera {Cajon_id = 1, Name = "Enrique", FavoriteFood = "Pizza", FavoriteSaga = "Xenoblade Chronicles", HasBeatenMorgott = true, HasBeatenMalenia = false, Crimes = "Suplantacion de identidad"}
+            new Cajonera {}
         };
     }
 

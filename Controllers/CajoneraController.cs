@@ -1,7 +1,5 @@
-
-
 using AffinityChart.Models;
-using AffinityChart.Serice;
+using AffinityChart.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AffinityChart.Controllers;
