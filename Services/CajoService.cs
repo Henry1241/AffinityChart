@@ -4,15 +4,8 @@ namespace AffinityChart.Services;
 
 public static class CajoService
 {
-    static List<Cajonera> Cajoneros { get; }
-    static int nextId = 3;
-    static CajoService()
-    {
-        Cajoneros = new List<Cajonera>
-        {
-            new Cajonera {}
-        };
-    }
+    static List<Cajonera> Cajoneros { get; } = new();
+    static int nextId = 1;
 
     public static List<Cajonera> GetAll() => Cajoneros;
 

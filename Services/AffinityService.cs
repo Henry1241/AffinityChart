@@ -4,15 +4,9 @@ namespace AffinityChart.Services;
 
 public static class AffinityService
 {
-    static List<Affinity> Affinities { get; }
+    static List<Affinity> Affinities { get; } = new();
     static int nextId = 1;
-    static AffinityService()
-    {
-        Affinities = new List<Affinity>
-        {
-            new Affinity {}
-        };
-    }
+
 
     public static List<Affinity> GetAll() => Affinities;
 

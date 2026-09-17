@@ -11,4 +11,7 @@ public class Cajonera
     public bool HasBeatenMorgott { get; set; }
     public bool HasBeatenMalenia { get; set; }
     public string? Crimes { get; set; }
+
+    public int Affinity_id { get; set;}
+    public Affinity Affinity { get; set;}
 }

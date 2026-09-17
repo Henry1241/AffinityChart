@@ -3,4 +3,7 @@
 GET {{AffinityChart_HostAddress}}/cajonera/
 Accept: application/json
 
+GET {{AffinityChart_HostAddress}}/affinity/
+Accept: application/json
+
 ###
